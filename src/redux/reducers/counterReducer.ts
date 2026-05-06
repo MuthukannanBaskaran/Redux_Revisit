@@ -1,19 +1,15 @@
-import { COUNTER_ACTIONS, type CounterAction } from "../types/actionTypes";
-
-type CounterState = { counter: number; };
+import { DECREMENT, INCREMENT, RESET, type CounterAction, type CounterState } from "../types/counterTypes";
 
 const initialState: CounterState = { counter: 0 }
 
 const counterReducer = (state: CounterState = initialState, action: CounterAction): CounterState => {
     switch (action.type) {
-        case COUNTER_ACTIONS.INCREMENT:
+        case INCREMENT:
             return { counter: state.counter + 1 };
-        case COUNTER_ACTIONS.DECREMENT:
+        case DECREMENT:
             return { counter: state.counter - 1 };
-        case COUNTER_ACTIONS.RESET:
+        case RESET:
             return initialState;
-        case COUNTER_ACTIONS.DOUBLE:
-            return { counter: state.counter + 2 };
         default:
             return state;
     }

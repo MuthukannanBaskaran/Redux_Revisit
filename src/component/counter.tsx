@@ -1,18 +1,18 @@
 import { useDispatch, useSelector } from "react-redux"
-import { COUNTER_ACTIONS } from "../types/actionTypes";
+import { decrement, increment, reset } from "../redux/actions/counterActions";
+import type { RootState } from "../redux/types/counterTypes";
 
 const Counter = () => {
-    const counter = useSelector((state) => state.counter);
+    const counter = useSelector((state: RootState) => state.counter);
     const dispatch = useDispatch();
     return (
         <>
             <div>
                 <div><p>Counter: {counter}</p></div>
                 <div>
-                    <button onClick={() => dispatch({ type: COUNTER_ACTIONS.INCREMENT })}>Increment</button>
-                    <button onClick={() => dispatch({ type: COUNTER_ACTIONS.RESET })}>Reset</button>
-                    <button onClick={() => dispatch({ type: COUNTER_ACTIONS.DECREMENT })}>Decrement</button>
-                    <button onClick={() => dispatch({ type: COUNTER_ACTIONS.DOUBLE })}>DOUBLE</button>
+                    <button onClick={() => dispatch(increment())}>Increment</button>
+                    <button onClick={() => dispatch(reset())}>Reset</button>
+                    <button onClick={() => dispatch(decrement())}>Decrement</button>
                 </div>
             </div>
         </>
