@@ -1,6 +1,4 @@
-import { DECREMENT, INCREMENT, RESET, type CounterAction, type CounterState } from "../types/counterTypes";
-
-const initialState: CounterState = { counter: 0 }
+import { DECREMENT, INCREMENT, initialState, RESET, type CounterAction, type CounterState } from "../types/counterTypes";
 
 const counterReducer = (state: CounterState = initialState, action: CounterAction): CounterState => {
     switch (action.type) {

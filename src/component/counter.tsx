@@ -1,9 +1,9 @@
 import { useDispatch, useSelector } from "react-redux"
 import { decrement, increment, reset } from "../redux/actions/counterActions";
-import type { RootState } from "../redux/types/counterTypes";
+import type { RootState } from "../redux";
 
 const Counter = () => {
-    const counter = useSelector((state: RootState) => state.counter);
+    const counter = useSelector((state: RootState) => state.counter.counter);
     const dispatch = useDispatch();
     return (
         <>

@@ -13,7 +13,3 @@ export type CounterAction = {
 export const initialState: CounterState = {
     counter: 0
 };
-
-export type RootState = {
-    counter: number;
-};
